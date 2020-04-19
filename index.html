@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="style.css" />		
+		<link rel="stylesheet" type="text/css" href="style.css" />
 		<title>Snake jQuery</title>
 	</head>
 
@@ -13,15 +13,30 @@
 		<script type="text/javascript" src="main.js"></script>
 
 		<script>
-		// variable pour modifier la taille de la map
-		var map=100;
+			// modifie la taille de la map
+			var map = 100;
 
-		// attend le chargement complet du DOM puis exécute une fonction
-		$(document).ready(function() {
-			
-			// exécute la fonction creer_map() qui est dans (main.js)
-			creer_map();
-		});
+			// stock les coordonnées [tr, td] de tete_snake=[] dans 1 seule cellule
+			var tete_snake = [0, 5];
+
+			// stock les coordonnées [tr, td] de corps_snake=[] dans 5 cellules
+			var corps_snake = [
+				[0, 5],
+				[0, 4],
+				[0, 3],
+				[0, 2],
+				[0, 1],
+			];
+
+			// attend le chargement complet du DOM puis exécute une fonction
+			$(document).ready(function () {
+
+				// exécute la fonction creer_map() qui est dans (main.js)
+				creer_map();
+
+				// exécute la fonction creer_snake() qui est dans (main.js)
+				creer_snake();
+			});
 		</script>
 	</body>
 </html>
