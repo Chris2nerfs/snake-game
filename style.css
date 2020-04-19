@@ -1,0 +1,7 @@
+table {
+    /* ajoute une bordure pleine */
+    border: 1px solid #000;
+    
+    /* marge extérieure de <table></table> */
+    margin: 0 auto;
+}
