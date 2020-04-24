@@ -11,15 +11,14 @@
 	<body>
 		<script src="jQuery.js"></script>
 		<script type="text/javascript" src="main.js"></script>
-
 		<script>
 			// modifie la taille de la map
 			var map = 100;
 
-			// stock les coordonnées [tr, td] de tete_snake=[] dans 1 seule cellule
+			// stock les coordonnées [<tr></tr>, <td></td>] de tete_snake=[] dans 1 seule cellule
 			var tete_snake = [0, 5];
 
-			// stock les coordonnées [tr, td] de corps_snake=[] dans 5 cellules
+			// stock les coordonnées [<tr></tr>, <td></td>] de corps_snake=[] dans 5 cellules
 			var corps_snake = [
 				[0, 5],
 				[0, 4],
@@ -27,15 +26,19 @@
 				[0, 2],
 				[0, 1],
 			];
+			// modifie la direction du snake
+			var direction = "droite";
+
+			// modifie la vitesse du snake
+			var speed = 100;
 
 			// attend le chargement complet du DOM puis exécute une fonction
 			$(document).ready(function () {
-
 				// exécute la fonction creer_map() qui est dans (main.js)
 				creer_map();
 
-				// exécute la fonction creer_snake() qui est dans (main.js)
-				creer_snake();
+				// exécute la fonction demarrer_jeu() qui est dans (main.js)
+				demarrer_jeu();
 			});
 		</script>
 	</body>
