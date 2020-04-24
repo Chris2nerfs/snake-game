@@ -56,7 +56,7 @@ function actualiser_snake ()
     // stock la longueur de [corps_snake[],[],[],[],[]]
     var taille_snake = corps_snake.length;
 
-    if ( direction == "droite" )
+    if ( direction == "droite" ) // intéragi avec changer_direction()
     {
 
         // stock la position x [tete_snake] et y + 1
@@ -103,4 +103,31 @@ function demarrer_jeu ()
 
     // setInterval() exécute en boucle actualiser_snake() avec un interval en millisecondes entre chaque exécution
     go = setInterval( actualiser_snake,speed );
+}
+/**
+ *  Changement de direction
+ */
+function changer_direction ()
+{
+    // sélectionne <body></body> puis événement .keydown se produit lorsqu'une touche du clavier est enfoncée puis lance la function (e) = paramètre de la touche enfoncée (37 || 38 || 39 || 40)
+    $( "body" ).keydown( function ( e )
+    {
+        // si e.(=37)keyCode
+        if ( e.keyCode == 37 ) // 37 = flèche gauche du clavier
+        {
+            direction = "gauche"; // intéragi avec actualiser_snake()
+        }
+        else if ( e.keyCode == 38 ) // 38 = flèche haut du clavier
+        {
+            direction = "haut";
+        }
+        else if ( e.keyCode == 39 ) // 39 = flèche droite du clavier
+        {
+            direction = "droite";
+        }
+        else if ( e.keyCode == 40 ) // 40 = flèche bas du clavier
+        {
+            direction = "bas";
+        }
+    } );
 }
