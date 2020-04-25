@@ -81,6 +81,20 @@ function actualiser_snake ()
         nouvelle_tete = [ tete_snake[ 0 ] + 1,tete_snake[ 1 ] ];
     }
 
+    // cell = stock toutes <tr></tr> qui correspond à l'index .eq(nouvelle_tete[0])
+    cell = $( "tr" ).eq( nouvelle_tete[ 0 ] ).find( "td" ).eq( nouvelle_tete[ 1 ] ); // puis
+    // trouve toutes <tr></tr> qui correspond à l'index .eq(nouvelle_tete[1])
+
+    // si variable (cell .est Class ("fruit"))
+    if ( cell.hasClass( "fruit" ) )
+    {
+        // ajoute une nouvelle cellule dans array [corps_snake]
+        corps_snake.push( [] );
+
+        // creé un nouveau fruit avec une nouvelle position
+        creer_fruit();
+    }
+
     // boucle qui prend la taille du snake - 1 (ex:5-1); tant que (ex:=4) > 0; on décrémente d'une itération
     for ( var i = taille_snake - 1; i > 0; i-- )
     {
