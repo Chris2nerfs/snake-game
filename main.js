@@ -191,6 +191,19 @@ function creer_fruit ()
  */
 function gameOver ()
 {
+    // sélectionne div#gameOver et l'affiche en utilisant l'effet indiqué ("vite")
+    $( "#gameOver" ).show( "fast",function ()
+    {
+        // $(cette div#gameOver) pour crée des animations personnalisées {apparaît depuis le haut à 100 millisecondes}
+        $( this ).animate( { top: 100 },"slow" );
+    } );
+
+    // sélectionne table puis change la couleur du background
+    $( "table" ).css( "background-color","#f22" );
+
+    // sélectionne .tete_snake,.corps_snake,.fruit puis l'efface (vite)
+    $( ".tete_snake,.corps_snake,.fruit" ).fadeOut( "fast" );
+
     // stop la variable go (actualiser_snake,speed)
     clearInterval( go );
 
