@@ -9,6 +9,8 @@
 	</head>
 
 	<body>
+		<div id="score">Score: <span>0</span></div>
+
 		<script src="jQuery.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script>
@@ -31,6 +33,9 @@
 
 			// modifie la vitesse du snake
 			var speed = 100;
+
+			// modifie la div #score
+			var score = 0;
 
 			// attend le chargement complet du DOM puis exécute une fonction
 			$(document).ready(function () {

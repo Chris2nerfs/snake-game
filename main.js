@@ -20,8 +20,8 @@ function creer_map ()
     {
         tr.push( "<tr>" + td + "</tr>" );
     }
-    // sélectionne <body></body> puis .html() affiche "<table>"+tr.join("\n")+"</table>" dans <body></body>
-    $( document.body ).html( "<table>" + tr.join( "\n" ) + "</table>" );
+    // sélectionne <body></body> puis .html() insére à la fin de l'élément sélectionné "<table>"+tr.join("\n")+"</table>" dans <body></body>
+    $( document.body ).append( "<table>" + tr.join( "\n" ) + "</table>" );
 }
 /**
  *  Création du snake
@@ -93,6 +93,12 @@ function actualiser_snake ()
 
         // creé un nouveau fruit avec une nouvelle position
         creer_fruit();
+
+        // agrémente de +1 la variable score
+        score++;
+
+        // sélectionne la span de la div #score puis .affiche ("espace" + variable score)
+        $( "#score span" ).html( " " + score );
     }
 
     // boucle qui prend la taille du snake - 1 (ex:5-1); tant que (ex:=4) > 0; on décrémente d'une itération
