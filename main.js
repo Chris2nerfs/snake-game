@@ -131,3 +131,18 @@ function changer_direction ()
         }
     } );
 }
+/**
+ *  Création du fruit
+ */
+function creer_fruit ()
+{
+    // sélectionne toutes <td></td> puis retire la Class("fruit")
+    $( "td" ).removeClass( "fruit" );
+
+    // fruit = stock [converti string en numberInter (nombre aléatoire() multiplié par map)]
+    fruit = [ parseInt( Math.random() * map ),parseInt( Math.random() * map ) ];
+
+    // sélectionne toutes <tr></tr> qui correspond à l'index .eq(fruit[0])
+    $( "tr" ).eq( fruit[ 0 ] ).find( "td" ).eq( fruit[ 1 ] ).addClass( "fruit" ); // puis
+    // sélectionne la <td></td> qui correspond à l'index .eq(fruit[1])
+}

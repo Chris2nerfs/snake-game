@@ -1,19 +1,26 @@
 table {
-    /* ajoute une bordure pleine */
-    border: 1px solid #000;
-    
-    /* marge extérieure de <table></table> */
-    margin: 0 auto;
+	/* ajoute une bordure pleine */
+	border: 1px solid #000;
+
+	/* marge extérieure de <table></table> */
+	margin: 0 auto;
 }
 
 td.corps_snake {
-    background-color: #af0;
-    border-radius: 10px;
+	background-color: #af0;
+	border-radius: 10px;
 }
 
 td.tete_snake {
-    /* ajoute une couleur de fond */
-    background-color: #f56;
-    /* ajoute une bordure arrondie */
-    border-radius: 10px;
+	/* ajoute une couleur de fond */
+	background-color: #f56;
+	/* ajoute une bordure arrondie */
+	border-radius: 10px;
+}
+
+td.fruit {
+	/* ajoute une couleur de fond */
+	background-color: #fa0;
+	/* ajoute une bordure arrondie */
+	border-radius: 10px;
 }
