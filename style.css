@@ -6,37 +6,44 @@ table {
 	margin: 0 auto;
 }
 
+td {
+	/* largeur des cellules */
+	width: 15px;
+	/* hauteur des cellules */
+	height: 15px;
+}
+
 td.corps_snake {
 	background-color: #af0;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 
 td.tete_snake {
 	/* ajoute une couleur de fond */
 	background-color: #f56;
 	/* ajoute une bordure arrondie */
-	border-radius: 10px;
+	border-radius: 15px;
 }
 
 td.fruit {
 	background-color: #fa0;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 
 #score {
 	/* centre le texte dans div id=score */
 	text-align: center;
 	/* taille du texte dans div id=score */
-	font-size: 10px;
+	font-size: 15px;
 }
 
 #gameOver {
 	position: absolute;
-	left: 742px;
+	left: 704px;
 	background-color: #fa5;
-	font-size: 10px;
-	border-radius: 10px;
-	width: 50px;
+	font-size: 15px;
+	border-radius: 15px;
+	width: 125px;
 	text-align: center;
 	display: none;
 }
