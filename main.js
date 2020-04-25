@@ -20,7 +20,7 @@ function creer_map ()
     {
         tr.push( "<tr>" + td + "</tr>" );
     }
-    // sélectionne <body></body> puis .html() insére à la fin de l'élément sélectionné "<table>"+tr.join("\n")+"</table>" dans <body></body>
+    // sélectionne <body></body> puis .html() affiche "<table>"+tr.join("\n")+"</table>" dans <body></body>
     $( document.body ).append( "<table>" + tr.join( "\n" ) + "</table>" );
 }
 /**
@@ -100,6 +100,26 @@ function actualiser_snake ()
         // sélectionne la span de la div #score puis .affiche ("espace" + variable score)
         $( "#score span" ).html( " " + score );
     }
+    // sinon si (variable cell .est Class("corps_snake"))
+    else if ( cell.hasClass( "corps_snake" ) ) // collision avec lui-même
+    {
+        // exécute la fonction gameOver()
+        gameOver();
+    }
+    // sinon si variable nouvelle_tete avec l'index [0] est < que 0
+    else if ( nouvelle_tete[ 0 ] < 0 || nouvelle_tete[ 1 ] < 0 ) // collision avec la bordure haute et gauche de la map
+    // nouvelle_tete avec l'index [1] est < que 0
+    {
+        // exécute la fonction gameOver()
+        gameOver();
+    }
+    // sinon si variable nouvelle_tete avec l'index [0] est > que map
+    else if ( nouvelle_tete[ 0 ] > map || nouvelle_tete[ 1 ] > map )// collision avec la bordure basse et droite de la map
+    // nouvelle_tete avec l'index [1] est > que map
+    {
+        // exécute la fonction gameOver()
+        gameOver();
+    }
 
     // boucle qui prend la taille du snake - 1 (ex:5-1); tant que (ex:=4) > 0; on décrémente d'une itération
     for ( var i = taille_snake - 1; i > 0; i-- )
@@ -165,4 +185,15 @@ function creer_fruit ()
     // sélectionne toutes <tr></tr> qui correspond à l'index .eq(fruit[0])
     $( "tr" ).eq( fruit[ 0 ] ).find( "td" ).eq( fruit[ 1 ] ).addClass( "fruit" ); // puis
     // sélectionne la <td></td> qui correspond à l'index .eq(fruit[1])
+}
+/**
+ *  Arrête le jeu
+ */
+function gameOver ()
+{
+    // stop la variable go (actualiser_snake,speed)
+    clearInterval( go );
+
+    // Supprime tous les gestionnaires d'événements
+    off();
 }
