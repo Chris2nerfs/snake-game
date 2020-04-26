@@ -33,17 +33,28 @@ td.fruit {
 #score {
 	/* centre le texte dans div id=score */
 	text-align: center;
-	/* taille du texte dans div id=score */
-	font-size: 15px;
+}
+
+#score span {
+	background-color: #bf2;
+	border-radius: 15px;
+	width: 120px;
+	display: inline-block;
 }
 
 #gameOver {
 	position: absolute;
-	left: 704px;
-	background-color: #fa5;
+	left: 692px;
+	text-align: center;
 	font-size: 15px;
 	border-radius: 15px;
-	width: 125px;
-	text-align: center;
+	width: auto;
 	display: none;
+}
+
+#gameOver span {
+	background-color: aqua;
+	width: 150px;
+	display: inline-block;
+	border-radius: 15px;
 }

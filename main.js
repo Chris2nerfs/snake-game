@@ -11,12 +11,12 @@ function creer_map ()
     var tr = [];
 
     // boucle qui va créer toutes les "<td></td>" en rapport avec var map=(index.html)
-    for ( var i = 0; i <= map; i++ )
+    for ( var i = 0; i <= map_y; i++ )
     {
         td += "<td></td>";
     }
     // boucle qui va créer toutes les "<tr>"+td+"</tr>" en rapport avec var map=(index.html)
-    for ( var i = 0; i <= map; i++ )
+    for ( var i = 0; i <= map_x; i++ )
     {
         tr.push( "<tr>" + td + "</tr>" );
     }
@@ -98,7 +98,7 @@ function actualiser_snake ()
         score++;
 
         // sélectionne la span de la div #score puis .affiche ("espace" + variable score)
-        $( "#score span" ).html( " " + score );
+        $( "#score span" ).html( "Score : " + score );
     }
     // sinon si (variable cell .est Class("corps_snake"))
     else if ( cell.hasClass( "corps_snake" ) ) // collision avec lui-même
@@ -114,7 +114,7 @@ function actualiser_snake ()
         gameOver();
     }
     // sinon si variable nouvelle_tete avec l'index [0] est > que map
-    else if ( nouvelle_tete[ 0 ] > map || nouvelle_tete[ 1 ] > map )// collision avec la bordure basse et droite de la map
+    else if ( nouvelle_tete[ 0 ] > map_x || nouvelle_tete[ 1 ] > map_y )// collision avec la bordure basse et droite de la map
     // nouvelle_tete avec l'index [1] est > que map
     {
         // exécute la fonction gameOver()
@@ -180,7 +180,7 @@ function creer_fruit ()
     $( "td" ).removeClass( "fruit" );
 
     // fruit = stock [converti string en numberInter (nombre aléatoire() multiplié par map)]
-    fruit = [ parseInt( Math.random() * map ),parseInt( Math.random() * map ) ];
+    fruit = [ parseInt( Math.random() * map_x ),parseInt( Math.random() * map_y ) ];
 
     // sélectionne toutes <tr></tr> qui correspond à l'index .eq(fruit[0])
     $( "tr" ).eq( fruit[ 0 ] ).find( "td" ).eq( fruit[ 1 ] ).addClass( "fruit" ); // puis
@@ -195,14 +195,14 @@ function gameOver ()
     $( "#gameOver" ).show( "fast",function ()
     {
         // $(cette div#gameOver) pour crée des animations personnalisées {apparaît depuis le haut à 100 millisecondes}
-        $( this ).animate( { top: 100 },"slow" );
+        $( this ).animate( { top: 250 },3000 );
     } );
 
     // sélectionne table puis change la couleur du background
     $( "table" ).css( "background-color","#f22" );
 
     // sélectionne .tete_snake,.corps_snake,.fruit puis l'efface (vite)
-    $( ".tete_snake,.corps_snake,.fruit" ).fadeOut( "fast" );
+    //    $( ".tete_snake,.corps_snake,.fruit" ).fadeOut( "fast" );
 
     // stop la variable go (actualiser_snake,speed)
     clearInterval( go );
