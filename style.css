@@ -33,13 +33,21 @@ td.fruit {
 #score {
 	/* centre le texte dans div id=score */
 	text-align: center;
+	background-color: #f56;
+	display: flex;
+	justify-content: space-around;
+	height: 40px;
 }
 
 #score span {
+	display: inline-block;
+	text-align: center;
 	background-color: #bf2;
 	border-radius: 15px;
+	font-size: 20px;
+	border: 8px solid rgb(112, 22, 22);
 	width: 120px;
-	display: inline-block;
+	padding: 1.5px;
 }
 
 #gameOver {
@@ -62,4 +70,12 @@ td.fruit {
 .image {
 	opacity: 0;
 	background-image: url("./baby-diable.png");
+}
+
+#jouer {
+	background-color: #fb0;
+	border-radius: 15px;
+	font-size: 20px;
+	border: 8px solid rgb(112, 22, 22);
+	width: 120px;
 }

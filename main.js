@@ -143,6 +143,7 @@ function demarrer_jeu ()
 
     // setInterval() exécute en boucle actualiser_snake() avec un interval en millisecondes entre chaque exécution
     go = setInterval( actualiser_snake,speed );
+
 }
 /**
  *  Changement de direction
@@ -198,6 +199,8 @@ function gameOver ()
             $( this ).animate( { top: 250 },3000 );
         } );
     */
+
+
     // sélectionne table puis change la couleur du background
     $( "table" ).addClass( "image" ).animate( { opacity: 1 },3000 );
 
@@ -207,6 +210,26 @@ function gameOver ()
     // stop la variable go (actualiser_snake,speed)
     clearInterval( go );
 
+    $( "#jouer" ).html( "Rejouer" ).click( function ()
+    {
+        location.reload();
+
+    } );
+
     // Supprime tous les gestionnaires d'événements
     off();
 }
+
+
+
+$( "#jouer" ).click( function ()
+{
+    // exécute la fonction demarrer_jeu()
+    demarrer_jeu();
+
+    // exécute la fonction changer_direction()
+    changer_direction();
+
+    // exécute la fonction creer_fruit()
+    creer_fruit();
+} );

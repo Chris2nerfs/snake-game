@@ -9,14 +9,19 @@
 	</head>
 
 	<body>
-		<div id="score"><span>Score: 0</span></div>
-		<div id="gameOver"><span>Game Over !!</span></div>
+		<div id="score">
+			<button id="jouer">Jouer</button>
+			<span>Score: 0</span>
+		</div>
+		<div id="gameOver">
+			<span>Game Over !!</span>
+		</div>
 
 		<script src="jQuery.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script>
 			// modifie la taille de la map
-			var map_x = 34; // horizontal variable utilisée dans : main.js function creer_map(){};
+			var map_x = 32; // horizontal variable utilisée dans : main.js function creer_map(){};
 			var map_y = 80; // vertical
 
 			// stock les coordonnées [<tr></tr>, <td></td>] de tete_snake=[] dans 1 seule cellule
@@ -43,15 +48,6 @@
 			$(document).ready(function () {
 				// exécute la fonction creer_map() qui est dans (main.js)
 				creer_map();
-
-				// exécute la fonction demarrer_jeu() qui est dans (main.js)
-				demarrer_jeu();
-
-				// exécute la fonction changer_direction() qui est dans (main.js)
-				changer_direction();
-
-				// exécute la fonction creer_fruit() qui est dans (main.js)
-				creer_fruit();
 			});
 		</script>
 	</body>
