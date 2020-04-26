@@ -58,3 +58,8 @@ td.fruit {
 	display: inline-block;
 	border-radius: 15px;
 }
+
+.image {
+	opacity: 0;
+	background-image: url("./baby-diable.png");
+}
