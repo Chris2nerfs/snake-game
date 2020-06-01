@@ -1,15 +1,40 @@
+// stock toutes les "<td></td>" créées en rapport avec var map=(index.html)
+var td = "";
+
+// stock toutes les "<tr>"+td+"</tr>" créées en rapport avec var map=(index.html)
+var tr = [];
+
+// modifie la taille de la map
+var map_x = 24; // horizontal variable utilisée dans : main.js function creer_map(){};
+
+var map_y = 80; // vertical
+
+// stock les coordonnées [<tr></tr>, <td></td>] de tete_snake=[] dans 1 seule cellule
+var tete_snake = [ 0,5 ];
+
+// stock les coordonnées [<tr></tr>, <td></td>] de corps_snake=[] dans 5 cellules
+var corps_snake = [
+    [ 0,5 ],
+    [ 0,4 ],
+    [ 0,3 ],
+    [ 0,2 ],
+    [ 0,1 ],
+];
+// modifie la direction du snake
+var direction = "droite";
+
+// modifie la vitesse du snake
+var speed = 130;
+
+// modifie la div #score
+var score = 0;
+
+
 /**
  *  Création de la map
  */
 function creer_map ()
 {
-
-    // stock toutes les "<td></td>" créées en rapport avec var map=(index.html)
-    var td = "";
-
-    // stock toutes les "<tr>"+td+"</tr>" créées en rapport avec var map=(index.html)
-    var tr = [];
-
     // boucle qui va créer toutes les "<td></td>" en rapport avec var map=(index.html)
     for ( var i = 0; i <= map_y; i++ )
     {
@@ -21,7 +46,7 @@ function creer_map ()
         tr.push( "<tr>" + td + "</tr>" );
     }
     // sélectionne <body></body> puis .html() affiche "<table>"+tr.join("\n")+"</table>" dans <body></body>
-    $( document.body ).append( "<table>" + tr.join( "\n" ) + "</table>" );
+    $( "main" ).append( "<table>" + tr.join( "\n" ) + "</table>" );
 }
 /**
  *  Création du snake

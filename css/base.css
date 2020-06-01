@@ -30,8 +30,9 @@ td.fruit {
 	border-radius: 15px;
 }
 
+
+/*
 #score {
-	/* centre le texte dans div id=score */
 	text-align: center;
 	background-color: #f56;
 	display: flex;
@@ -79,3 +80,4 @@ td.fruit {
 	border: 8px solid rgb(112, 22, 22);
 	width: 120px;
 }
+*/
