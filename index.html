@@ -4,35 +4,39 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<title>Snake Game</title>
+		<link rel="stylesheet" type="text/css" href="./css/base.css" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Ultra&display=swap"
+		/>
 	</head>
 
 	<body>
 		<header>
-			<h2>Snake Game</h2>
+			<h1>Snake Game</h1>
 		</header>
 		<aside class="buttons">
-			<button>Easy</button>
-			<button>Medium</button>
-			<button>Hard</button>
+			<button id="girl">Girl Snake</button>
+			<button id="boy">Boy Snake</button>
+			<button id="hard">Hard</button>
 		</aside>
 		<main></main>
 		<aside>
-			<button>Chrono</button>
-			<button>Score</button>
-			<button>replay</button>
+			<button id="chrono">Chrono</button>
+			<button id="score">Score</button>
+			<button id="replay">Replay</button>
 		</aside>
 		<footer>© 2020 - www.chris2nerfs.com</footer>
 
-		<script src="js/jQuery.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script src="./js/jQuery.js"></script>
+		<script src="./js/script.js"></script>
 		<script>
 			// attend le chargement complet du DOM puis exécute une fonction
 			$(document).ready(function () {
-				// exécute la fonction creer_map() qui est dans (main.js)
-				creer_map();
+				// exécute la fonction create_map() qui est dans (main.js)
+				createMap();
 			});
 		</script>
 	</body>

@@ -1,4 +1,5 @@
 table {
+	border-collapse: collapse;
 	/* ajoute une bordure pleine */
 	border: 1px solid #000;
 
@@ -7,28 +8,64 @@ table {
 }
 
 td {
+	border: 1px solid transparent;
 	/* largeur des cellules */
 	width: 15px;
 	/* hauteur des cellules */
 	height: 15px;
 }
 
-td.corps_snake {
-	background-color: #af0;
+td.createFruit {
+	background-color: lawngreen;
 	border-radius: 15px;
 }
 
-td.tete_snake {
+td.maleBody {
 	/* ajoute une couleur de fond */
-	background-color: #f56;
+	background-color: aqua;
 	/* ajoute une bordure arrondie */
 	border-radius: 15px;
 }
 
-td.fruit {
-	background-color: #fa0;
+td.maleHead {
+	/* ajoute une couleur de fond */
+	background-color: blue;
+	/* ajoute une bordure arrondie */
 	border-radius: 15px;
 }
+
+td.maleTail {
+	/* ajoute une couleur de fond */
+	background-color: midnightblue;
+	/* ajoute une bordure arrondie */
+	border-radius: 15px;
+}
+
+td.femaleBody {
+	/* ajoute une couleur de fond */
+	background-color: pink;
+	/* ajoute une bordure arrondie */
+	border-radius: 15px;
+}
+
+td.femaleHead {
+	/* ajoute une couleur de fond */
+	background-color: purple;
+	/* ajoute une bordure arrondie */
+	border-radius: 15px;
+}
+
+td.femaleTail {
+	background-color: magenta;
+	border-radius: 15px;
+	height: 5px;
+}
+
+.eatingFruit {
+	height: 30px;
+	width: 30px;
+}
+
 
 
 /*

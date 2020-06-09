@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: rgb(255, 0, 140);
+    background-color: midnightblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,8 +14,14 @@ header {
     height: 18%;
 }
 
-h2 {
-    background-color: darkolivegreen;
+h1 {
+    color: cadetblue;
+    transition-property: color;
+    /* Active la transition sur background-color */
+    transition-duration: 3s;
+    /* La transition dure 1s */
+    font-size: 75px;
+    font-family: 'Ultra', serif;
 }
 
 /*
@@ -25,7 +31,8 @@ h2 {
 }
 */
 button {
-    background: linear-gradient(119deg, #06b2ff, #ff84af);
+    color: cadetblue;
+    font-size: 25px;
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -38,12 +45,59 @@ aside {
     display: inline-grid;
     justify-content: center;
     align-items: center;
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 10s infinite;
+    background-color: currentColor;
 }
+
+@supports (background-blend-mode: overlay) {
+    .background {
+        background-image: linear-gradient(45deg, white 10%, black 90%);
+        background-blend-mode: overlay;
+    }
+}
+
+@keyframes wheelHueColor {
+
+    from,
+    to {
+        color: red;
+    }
+
+    15% {
+        color: orange;
+    }
+
+    30% {
+        color: yellow;
+    }
+
+    45% {
+        color: green;
+    }
+
+    40% {
+        color: blue;
+    }
+
+    55% {
+        color: indigo;
+    }
+
+    70% {
+        color: violet;
+    }
+
+    85% {
+        color: pink;
+    }
+}
+
 
 main {
     background-image: url("../asset/snake-mexicain.gif");
     background-repeat: round;
-    background-size: contain;
+    background-size: inherit;
     flex-basis: 70%;
     height: 70%;
 }
@@ -52,10 +106,32 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f56;
+    background-color: midnightblue;
+    color: cadetblue;
+    font-weight: bold;
     flex-basis: 100%;
     height: 12%;
 }
+
+.grille1 {
+    border: 2px solid blueviolet;
+}
+
+.grille2 {
+    border: 2px solid rgb(60, 0, 255);
+}
+
+.image {
+    border: 2px solid transparent;
+    background-image: url("../asset/skrull-mort-de-rire.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+}
+
+
+
 
 
 /*
